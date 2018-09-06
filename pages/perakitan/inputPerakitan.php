@@ -56,40 +56,16 @@ if($_SESSION['status']!="login"){
                         </div>
                         <hr>
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label class="form-label">Kemarin</label>
-                                    <input type="text" name="kabelKemarin" class="form-control" placeholder="0" readonly>
-                                </div>
-                                <div class="col-md-10">
-                                    <label class="form-label">Pasang Kabel</label>
-                                    <input type="text" name="kabel" class="form-control" placeholder="Kabel" required>
-                                </div>
-                            </div>
+                            <label class="form-label">Pasang Kabel</label>
+                            <input type="text" name="kabel" class="form-control" placeholder="Kabel" required>
                         </div>
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label class="form-label">Kemarin</label>
-                                    <input type="text" name="tapeKemarin" class="form-control" placeholder="0" readonly>
-                                </div>
-                                <div class="col-md-10">
-                                    <label class="form-label">Full Tape</label>
-                                    <input type="text" name="full_tape" class="form-control" placeholder="Kabel" required>
-                                </div>
-                            </div>
+                            <label class="form-label">Full Tape</label>
+                            <input type="text" name="full_tape" class="form-control" placeholder="Fulltape" required>
                         </div>
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <label class="form-label">Kemarin</label>
-                                    <input type="text" name="korgetKemarin" class="form-control" placeholder="0" readonly>
-                                </div>
-                                <div class="col-md-10">
-                                    <label class="form-label">Korget</label>
-                                    <input type="text" name="korget" class="form-control" placeholder="Kabel" required>
-                                </div>
-                            </div>
+                            <label class="form-label">Korget</label>
+                            <input type="text" name="korget" class="form-control" placeholder="Korget" required>
                         </div>
                     </div> <!-- card body -->
                     <div class="card-footer text-right">
@@ -110,16 +86,9 @@ if($_SESSION['status']!="login"){
                 val: val
             },
             success: function(data){
-                console.log(data);
                 var toJson = JSON.parse(data);
                 console.log(toJson);
-                $('[name=kode_produksi]').val("");
-                $('[name=kabelKemarin]').val("");
                 $('[name=jumlah_kabel]').val("");
-                $('[name=kode_produksi]').val(toJson.kode_produksi);
-                $('[name=kabelKemarin]').val(toJson.dayKabel);
-                $('[name=tapeKemarin]').val(toJson.dayTape);
-                $('[name=korgetKemarin]').val(toJson.dayKorget);
                 $('[name=jumlah_kabel]').val(toJson.jumlah_kabel);
             }
         });

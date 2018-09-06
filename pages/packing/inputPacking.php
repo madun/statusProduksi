@@ -38,7 +38,8 @@ if($_SESSION['status']!="login"){
                                     $sql = "SELECT tb_item.*, tb_produksi.* FROM tb_produksi
                                     LEFT JOIN tb_item ON tb_item.id = tb_produksi.item_id
                                     LEFT JOIN tb_state ON tb_state.produksi_id = tb_produksi.id
-                                    where tb_state.day = 0
+                                    where tb_state.day != 0
+                                    AND tb_state.state = 'dotsu'
                                     ";
                                     $result = $conn->query($sql);
 
